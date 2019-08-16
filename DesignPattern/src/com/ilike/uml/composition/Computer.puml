@@ -1,0 +1,14 @@
+@startuml
+
+class Mouse
+class Monitor
+
+class Computer
+Computer *-- Mouse
+Computer *-- Monitor
+class Computer{
+      Mouse mouse = new Mouse();
+      Monitor monitor=new Monitor();
+}
+
+@enduml

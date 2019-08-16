@@ -1,0 +1,15 @@
+@startuml
+
+class Person
+
+class Person{
+  id:Integer
+  name:String
+  getId()Integer
+  setId(id:Integer)void
+  getName()String
+  setName(name:String)void
+
+}
+
+@enduml
