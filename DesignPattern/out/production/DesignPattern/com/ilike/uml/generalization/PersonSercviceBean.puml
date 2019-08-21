@@ -1,0 +1,12 @@
+@startuml
+
+abstract class DaoSupport
+class PersonServiceBean
+
+DaoSupport <|--PersonServiceBean
+
+class DaoSupport{
+  void save(Object entity)
+  void delete(Object id)
+}
+@enduml

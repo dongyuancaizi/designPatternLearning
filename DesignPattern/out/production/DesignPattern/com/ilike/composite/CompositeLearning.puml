@@ -1,0 +1,73 @@
+@startuml
+class A
+class B
+
+/'B继承A'/
+A <|-- B
+class A{
+ void fun1()
+ void fun2()
+ void fun3()
+}
+
+class C
+class D
+/'D依赖C'/
+C <.. D
+class C{
+ void fun1()
+ void fun2()
+ void fun3()
+}
+
+class E
+class F
+/'E依赖F'/
+E o-- F
+class E{
+ void fun1()
+ void fun2()
+ void fun3()
+}
+class F{
+ E e
+ void set(E e)
+}
+
+
+class G
+class H
+/'E依赖F'/
+G *-- H
+class G{
+ void fun1()
+ void fun2()
+ void fun3()
+}
+class H{
+ G e = new G()
+}
+/'abstract class AbstractList
+abstract AbstractCollection
+interface List
+interface Collection
+
+List <|-- AbstractList
+Collection <|-- AbstractCollection
+
+Collection <|- List
+AbstractCollection <|- AbstractList
+AbstractList <|-- ArrayList
+
+class ArrayList {
+Object[] elementData
+size()
+}
+
+enum TimeUnit {
+DAYS
+HOURS
+MINUTES
+}'/
+
+@enduml
