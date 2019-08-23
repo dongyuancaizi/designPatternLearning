@@ -1,0 +1,30 @@
+@startuml
+
+title 建造者模式类图
+
+/'产品'/
+interface Product
+/'建造者'/
+abstract class Builder
+/'指挥者'/
+class Director
+
+/'具体的实现者'/
+class ConcreteBuilder
+
+Builder *-- Product
+Builder <--o Director
+
+Builder <|--  ConcreteBuilder
+Builder <|--  HighBuilder
+class Builder{
+ + void buildPartA();
+ + void buildPartB();
+ + void buildPartC();
+ + getResult();
+}
+class Director{
+  -Builder builder;
+  + construct();
+}
+@enduml
