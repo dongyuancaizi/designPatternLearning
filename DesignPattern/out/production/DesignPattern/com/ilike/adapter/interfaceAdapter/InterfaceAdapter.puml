@@ -1,0 +1,17 @@
+@startuml
+
+interface Interface1
+abstract class AbstractAdapter
+class A
+
+
+Interface1<|..AbstractAdapter
+AbstractAdapter<..A
+
+interface Interface1{
+  void operation1();
+  void operation2();
+  void operation3();
+  void operation4();
+}
+@enduml
