@@ -1,0 +1,28 @@
+@startuml
+
+abstract class WebSite
+class  ConcreteWebSite
+class WebSiteFactory
+class Client
+class User
+
+WebSite <|-- ConcreteWebSite
+WebSiteFactory o-- WebSite
+
+WebSiteFactory  <.. Client
+ConcreteWebSite <.down. Client
+User <.down.Client
+User <.down.ConcreteWebSite
+
+class WebSite{
+  void use();
+}
+
+class  ConcreteWebSite{
+  void use();
+}
+
+class WebSiteFactory{
+  WebSite getWebSite();
+}
+@enduml
