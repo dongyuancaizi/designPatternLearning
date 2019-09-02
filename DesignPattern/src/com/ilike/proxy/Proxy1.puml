@@ -1,0 +1,14 @@
+@startuml
+ class TargetClass
+ class ProxyObject
+
+
+TargetClass <.. ProxyObject
+ProxyObject <.. Client
+
+ class TargetClass{
+   void operation1();
+   void operation2();
+
+ }
+@enduml

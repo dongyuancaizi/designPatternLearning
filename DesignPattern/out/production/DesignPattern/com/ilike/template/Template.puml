@@ -1,0 +1,23 @@
+@startuml
+
+abstract class AbstractClass
+class ConcreteClass
+class Client
+AbstractClass <|-- ConcreteClass
+ConcreteClass <.. Client
+
+class AbstractClass{
+ void template();
+ void operation1();
+ void operation2();
+ void operation3();
+ void operation4();
+}
+
+class ConcreteClass{
+void operation2();
+ void operation3();
+ void operation4();
+}
+
+@enduml

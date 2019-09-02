@@ -1,0 +1,19 @@
+@startuml
+
+abstract class SoyaMilk
+class BlackBeanSoyaMilk
+class PennutSoyaMilk
+class Client
+
+SoyaMilk <|-- BlackBeanSoyaMilk
+SoyaMilk <|-- PennutSoyaMilk
+SoyaMilk <.right. Client
+BlackBeanSoyaMilk <.right. Client
+class SoyaMilk{
+  void make();
+  void select();
+  void add();
+  void soak();
+  void beat();
+}
+@enduml
