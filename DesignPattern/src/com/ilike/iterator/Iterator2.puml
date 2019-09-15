@@ -1,0 +1,37 @@
+@startuml
+
+interface Iterator
+interface College
+class Department
+class ComputerCollageIterator
+class InfoCollageIterator
+class OutPutImpl
+Iterator <|.. ComputerCollageIterator
+Iterator <|.. InfoCollageIterator
+College <|.. ComputerCollage
+College <|.. InfoCollage
+ComputerCollageIterator <.. ComputerCollage
+InfoCollageIterator <.. InfoCollage
+OutPutImpl o--College
+ComputerCollageIterator o-- Department
+InfoCollageIterator o-- Department
+ComputerCollage o-- Department
+InfoCollage o-- Department
+
+interface Iterator{
+    boolean hasNext();
+    E next();
+    void remove();
+}
+
+interface College{
+   Iterator createIterator();
+}
+
+class ComputerCollage{
+   List<E> elements;
+}
+class InfoCollage{
+   E [] elements;
+}
+@enduml

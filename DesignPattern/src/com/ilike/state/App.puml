@@ -1,0 +1,20 @@
+@startuml
+class Activity
+
+State <|.. NoRaffleState
+State <|.. CanRaffleState
+State <|.. DispenseState
+State <|.. DispenseOutState
+
+Activity <-->State
+
+interface State{
+  void deduceMoney();
+  boolean raffle();
+  void dispensePrize();
+}
+
+
+
+
+@enduml

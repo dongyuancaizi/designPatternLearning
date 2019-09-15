@@ -1,0 +1,39 @@
+@startuml
+interface Command
+
+class NoCommand
+class LightOnCommand
+class LightOffCommand
+class LightReceiver
+class RemoteController
+class Client
+Command <|.. LightOnCommand
+Command <|.. LightOffCommand
+Command <|.. NoCommand
+LightOnCommand o-up- LightReceiver
+LightOffCommand o-up- LightReceiver
+RemoteController o-- Command
+LightReceiver <.right.Client
+RemoteController <.right.Client
+LightOnCommand <.right.Client
+LightOffCommand <.right.Client
+interface Command{
+   void execute();
+   void undo();
+}
+
+class LightOnCommand{
+   void execute();
+   void undo();
+}
+
+class LightReceiver{
+  on();
+  off();
+}
+
+class RemoteController{
+ Command [] onCommand;
+ Command [] offCommand;
+}
+@enduml

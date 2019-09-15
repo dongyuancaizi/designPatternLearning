@@ -1,0 +1,50 @@
+@startuml
+class Action
+class Success
+class Fail
+
+class Person
+class Man
+class Woman
+
+class ObjectStructure
+
+Person <|-- Man
+Person <|-- Woman
+
+Action <|-- Success
+Action <|-- Fail
+
+ObjectStructure o--Person
+
+class Action{
+  void operation1();
+  void operation2();
+}
+
+Action<--Person
+
+class Success{
+  void operation1();
+  void operation2();
+}
+class Fail{
+   void operation1();
+   void operation2();
+}
+
+class Person{
+ void accept(Action action);
+}
+
+class Man{
+void accept(Action action);
+}
+class Woman{
+void accept(Action action);
+}
+
+class ObjectStructure{
+  Person [] elements;
+}
+@enduml

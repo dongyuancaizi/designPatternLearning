@@ -1,0 +1,33 @@
+@startuml
+
+
+interface Subject
+interface Observer
+class WeatherData
+class Client
+
+Subject <|-- WeatherData
+Observer <--Subject
+WeatherData o--Observer
+
+Observer <|..Sina
+Observer <|..Baidu
+Observer <|..CurrentCondition
+
+Subject <--Client
+Observer <--Client
+
+interface Subject{
+  void registerObserver(Observer observer);
+  void removeObserver(Observer observer);
+  void notifyObserver(Observer observer);
+}
+
+class WeatherData{
+  List<Observer> observers;
+}
+
+interface Observer{
+  void update();
+}
+@enduml

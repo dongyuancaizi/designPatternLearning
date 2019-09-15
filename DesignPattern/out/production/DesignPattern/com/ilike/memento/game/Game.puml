@@ -1,0 +1,20 @@
+@startuml
+
+ class Memento{
+   int vit;
+   int def;
+ }
+
+Caretaker o--Memento
+GameRole -->Memento
+client -->Memento
+client -->GameRole
+
+class Caretaker{
+   Memento  memento;
+ }
+
+ class GameRole{
+    Memento createMemento();
+  }
+@enduml

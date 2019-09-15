@@ -1,0 +1,29 @@
+@startuml
+
+interface Iterator
+interface Aggregate
+class ConcreteIterator
+class ConcreteAggregate
+Iterator <|.. ConcreteIterator
+Iterator <|.. ConcreteIterator02
+Aggregate <|.. ConcreteAggregate
+Aggregate <|.. ConcreteAggregate02
+ConcreteIterator <.. ConcreteAggregate
+ConcreteIterator02 <.. ConcreteAggregate02
+interface Iterator{
+    boolean hasNext();
+    E next();
+    void remove();
+}
+
+interface Aggregate{
+   Iterator createIterator();
+}
+
+class ConcreteAggregate{
+   List<E> elements;
+}
+class ConcreteAggregate02{
+   E [] elements;
+}
+@enduml

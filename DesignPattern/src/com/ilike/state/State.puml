@@ -1,0 +1,19 @@
+@startuml
+
+
+interface State
+class Context
+
+State <|.. ConcreteStateA
+State <|.. ConcreteStateB
+Context o--State
+
+interface State{
+  void operation1();
+   void operation1();
+}
+
+class Context{
+  State state;
+}
+@enduml

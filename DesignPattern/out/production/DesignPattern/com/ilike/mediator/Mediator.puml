@@ -1,0 +1,22 @@
+@startuml
+ class Mediator
+ abstract class ConcreteMediator
+
+ class Colleague
+
+ Mediator<|-up-ConcreteMediator
+ Colleague<|--Alarm
+ Colleague<|--TV
+ Colleague<|--Curtain
+ Colleague <--> Mediator
+ConcreteMediator o--Colleague
+ class ConcreteMediator{
+    HashMap<String,Mediator>concreteMediatorMap;
+   void getMessage();
+ }
+
+  class Colleague{
+   void sendMessage();
+  Mediator getMediator();
+  }
+@enduml

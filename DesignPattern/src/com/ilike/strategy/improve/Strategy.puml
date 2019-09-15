@@ -1,0 +1,18 @@
+@startuml
+
+Strategy<|.. ConcreteStrategyA
+Strategy<|.. ConcreteStrategyB
+
+Context o--Strategy
+
+class Context{
+  Strategy strategy;
+}
+
+ interface Strategy{
+   void operation1();
+   void operation1();
+ }
+
+
+@enduml

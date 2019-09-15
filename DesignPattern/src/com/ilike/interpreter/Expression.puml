@@ -1,0 +1,21 @@
+@startuml
+
+
+Expression <|-- VarExpression
+Expression <|--o SymbolExpression
+
+SymbolExpression <|-- SubSymbolExpression
+SymbolExpression <|-- AddSymbolExpression
+Calculator o--Expression
+Client -->Calculator
+
+abstract class Expression{
+ void  interpretr();
+}
+
+
+
+
+
+
+@enduml
