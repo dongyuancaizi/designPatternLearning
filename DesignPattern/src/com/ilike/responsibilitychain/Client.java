@@ -17,6 +17,6 @@ public class Client {
         collegeApprover.setApprover(schooleMasterApprover);
         schooleMasterApprover.setApprover(departmentApprover);
         schooleMasterApprover.processRequest(pr1);
-        
+
     }
 }
